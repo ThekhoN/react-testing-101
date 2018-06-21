@@ -12,10 +12,12 @@ react-test-renderer
 </li>
 <li>
 Create setupTests.js inside /src
-```
+
+```javascript
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 configure({ adapter: new Adapter() });
 ```
+
 </li>
 </ol>
