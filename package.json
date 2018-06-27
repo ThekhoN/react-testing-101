@@ -12,11 +12,24 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cosmos": "cosmos",
+    "cosmos:export": "cosmos-export"
   },
   "devDependencies": {
     "enzyme-adapter-react-16": "^1.1.1",
     "react-addons-test-utils": "^15.6.2",
+    "react-cosmos": "^4.5.0",
     "react-test-renderer": "^16.4.1"
+  },
+  "jest": {
+    "coverageReporters": [
+      "html"
+    ],
+    "collectCoverageFrom": [
+      "**/redux/**",
+      "!**/__fixtures__/**",
+      "!**/__snapshots__/**"
+    ]
   }
 }
