@@ -12,6 +12,14 @@ composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const defaultState = {};
 
+export const configureStore = defaultState => {
+  return createStore(
+    connectRouter(history)(rootReducer),
+    defaultState,
+    composeEnhancers(applyMiddleware(thunk, routerMiddlewareFn))
+  );
+};
+
 const store = createStore(
   connectRouter(history)(rootReducer),
   defaultState,

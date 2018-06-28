@@ -5,7 +5,7 @@ import {
   counterUpdateCount
 } from "../../redux/modules/counter";
 
-class Counter extends Component {
+export class Counter extends Component {
   componentDidMount() {
     this.props.counterFetchCount();
   }
@@ -23,11 +23,20 @@ class Counter extends Component {
       <div className="counter app-wrapper">
         <h2>{this.props.count}</h2>
         <br />
-        <button onClick={this.decrementCount}> decrement (-) </button>
+        <button className="decrement" onClick={this.decrementCount}>
+          {" "}
+          decrement (-){" "}
+        </button>
         <br />
-        <button onClick={this.incrementCount}> increment (+) </button>
+        <button className="increment" onClick={this.incrementCount}>
+          {" "}
+          increment (+){" "}
+        </button>
         <br />
-        <button onClick={this.resetCount}> reset </button>
+        <button className="reset" onClick={this.resetCount}>
+          {" "}
+          reset{" "}
+        </button>
       </div>
     );
   }
