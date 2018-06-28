@@ -1,0 +1,7 @@
+.main-nav {
+  padding: 1rem 0;
+  background: #f2f2f2;
+}
+.main-nav > a {
+  padding: 1rem;
+}

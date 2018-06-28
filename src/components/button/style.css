@@ -1,0 +1,7 @@
+.button {
+    padding: 0.6rem;
+}
+
+.button.is-hovered--true {
+    background: orange;
+}
