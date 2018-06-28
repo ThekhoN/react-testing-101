@@ -7,7 +7,7 @@ export const COUNTER_FETCH_LOADING = "COUNTER_FETCH_LOADING";
 export const COUNTER_FETCH_FULFILLED = "COUNTER_FETCH_FULFILLED";
 export const COUNTER_FETCH_FAILURE = "COUNTER_FETCH_FAILURE";
 
-const counterInitialState = {
+export const counterInitialState = {
   count: 0,
   error: "",
   loading: false,
@@ -56,6 +56,7 @@ export const counterFetchCount = () => {
     })
       .then(response => {
         const count = response.data[0].count;
+        console.log({ response });
         dispatch({
           type: COUNTER_SET,
           payload: count
