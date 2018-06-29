@@ -1,4 +1,5 @@
 import axios from "axios";
+import { counterMessages } from "../../../utils/messags";
 export const COUNTER_RESET = "COUNTER_RESET";
 export const COUNTER_SET = "COUNTER_SET";
 export const COUNTER_INCREMENT = "COUNTER_INCREMENT";
@@ -50,20 +51,32 @@ export const counterUpdateCount = type => {
 
 export const counterFetchCount = () => {
   return function(dispatch, getState) {
+    dispatch({
+      type: COUNTER_FETCH_LOADING
+    });
+
     return axios({
       method: "GET",
       url: "httpS://59257e8a21cf650011fddc9b.mockapi.io/counter/count/count"
     })
       .then(response => {
+        if (!response.data || !response.data[0] || !response.data[0].count) {
+          return dispatch({
+            type: COUNTER_FETCH_FAILURE,
+            payload: counterMessages.incorrectResponse
+          });
+        }
         const count = response.data[0].count;
-        console.log({ response });
         dispatch({
-          type: COUNTER_SET,
+          type: COUNTER_FETCH_FULFILLED,
           payload: count
         });
       })
       .catch(err => {
-        console.log("err inside counterFetchCount: ", err);
+        return dispatch({
+          type: COUNTER_FETCH_FAILURE,
+          payload: counterMessages.serviceError
+        });
       });
   };
 };

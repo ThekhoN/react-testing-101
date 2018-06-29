@@ -2,6 +2,7 @@
 
 exports[`Button matches snapshot 1`] = `
 <button
+  className="button is-hovered--false"
   onClick={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
