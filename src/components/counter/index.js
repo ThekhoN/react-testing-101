@@ -24,18 +24,15 @@ export class Counter extends Component {
         <h2>{this.props.count}</h2>
         <br />
         <button className="decrement" onClick={this.decrementCount}>
-          {" "}
-          decrement (-){" "}
+          decrement (-)
         </button>
         <br />
         <button className="increment" onClick={this.incrementCount}>
-          {" "}
-          increment (+){" "}
+          increment (+)
         </button>
         <br />
         <button className="reset" onClick={this.resetCount}>
-          {" "}
-          reset{" "}
+          reset
         </button>
       </div>
     );

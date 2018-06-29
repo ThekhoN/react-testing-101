@@ -1,14 +1,6 @@
-import React from "react";
-import Counter from "../index";
-import { Provider } from "react-redux";
-import store from "../../../redux/store";
-
-const ConnectedCounter = () => (
-  <Provider store={store}>
-    <Counter />
-  </Provider>
-);
+import ConnectedCounter from "../index";
 
 export default {
-  component: ConnectedCounter
+  component: ConnectedCounter,
+  reduxState: {}
 };
